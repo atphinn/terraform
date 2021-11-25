@@ -78,3 +78,10 @@ resource "azurerm_vpn_gateway" "AnsiCron" {
 }
 
 
+resource "azurerm_local_network_gateway" "AnsiCron" {
+  name                = "backHomeAnsible"
+  resource_group_name = azurerm_resource_group.AnsiCron.name
+  location            = azurerm_resource_group.AnsiCron.location
+  gateway_address     = ""
+  address_space       = [""]
+}
